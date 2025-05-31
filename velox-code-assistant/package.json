@@ -1,0 +1,55 @@
+{
+  "name": "velox-code-assistant",
+  "displayName": "Velox Code Assistant",
+  "description": "A VS Code extension to generate and fix code using the Gemini API.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:velox.codeAssistant.generate",
+    "onCommand:velox.codeAssistant.fix"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "velox.codeAssistant.generate",
+        "title": "Velox: Generate Code"
+      },
+      {
+        "command": "velox.codeAssistant.fix",
+        "title": "Velox: Fix Code"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/velox-code-assistant.git"
+  },
+  "devDependencies": {
+    "@types/node": "^16.x",
+    "@types/vscode": "^1.70.0",
+    "@typescript-eslint/eslint-plugin": "^5.x",
+    "@typescript-eslint/parser": "^5.x",
+    "eslint": "^8.x",
+    "typescript": "^4.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/velox-code-assistant.git"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
+  }
+}
